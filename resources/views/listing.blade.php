@@ -1,4 +1,6 @@
-<a href="index.html" class="inline-block text-black ml-4 mb-4"
+@extends('layout')
+@section('content')
+<a href="/" class="inline-block text-black ml-4 mb-4"
                 ><i class="fa-solid fa-arrow-left"></i> Back
             </a>
             <div class="mx-4">
@@ -12,8 +14,8 @@
                             alt=""
                         />
 
-                        <h3 class="text-2xl mb-2">Senior Laravel Developer</h3>
-                        <div class="text-xl font-bold mb-4">Acme Corp</div>
+                        <h3 class="text-2xl mb-2">{{$listing->title}}</h3>
+                        <div class="text-xl font-bold mb-4">{{$listing->company}}</div>
                         <ul class="flex">
                             <li
                                 class="bg-black text-white rounded-xl px-3 py-1 mr-2"
@@ -37,7 +39,7 @@
                             </li>
                         </ul>
                         <div class="text-lg my-4">
-                            <i class="fa-solid fa-location-dot"></i> Daytona, FL
+                            <i class="fa-solid fa-location-dot"></i> {{$listing->location}}
                         </div>
                         <div class="border border-gray-200 w-full mb-6"></div>
                         <div>
@@ -45,22 +47,7 @@
                                 Job Description
                             </h3>
                             <div class="text-lg space-y-6">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur
-                                    adipisicing elit. Eligendi non reprehenderit
-                                    facilis architecto autem quam
-                                    necessitatibus, odit quod, repellendus
-                                    voluptate cum. Necessitatibus a id tenetur.
-                                    Error numquam at modi quaerat.
-                                </p>
-                                <p>
-                                    Lorem, ipsum dolor sit amet consectetur
-                                    adipisicing elit. Quaerat praesentium eos
-                                    consequuntur ex voluptatum necessitatibus
-                                    odio quos cupiditate iste similique rem in,
-                                    voluptates quod maxime animi veritatis illum
-                                    quo sapiente.
-                                </p>
+
 
                                 <a
                                     href="mailto:test@test.com"
@@ -81,3 +68,4 @@
                     </div>
                 </div>
             </div>
+@endsection

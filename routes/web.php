@@ -24,3 +24,10 @@ Route::get('/', function () {
         'listings' => Listing::all()
     ]);
 });
+
+Route::get('/listings/{id}', function ($id) {
+
+    return view('listing',[
+        'listing' => Listing::find($id)
+    ]);
+});
