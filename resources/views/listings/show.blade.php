@@ -37,4 +37,3 @@
     </div>
 
 </x-layout>
-
