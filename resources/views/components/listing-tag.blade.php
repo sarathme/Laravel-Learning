@@ -7,7 +7,7 @@
 
     @foreach ($tags as $tag)
         <li class="flex items-center justify-center bg-laravel text-white rounded-xl py-1 px-3 mr-2 text-xs">
-            <a href="/tag={{ $tag }}">{{ strtoupper($tag) }}</a>
+            <a href="/?tag={{ $tag }}">{{ strtoupper($tag) }}</a>
         </li>
     @endforeach
 
