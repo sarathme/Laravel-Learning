@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Listing;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 // Common Resource Routes: naming functions
 // index - Show all listings
@@ -35,5 +36,22 @@ class ListingController extends Controller
     //// Show Create Listing
     public function create(){
         return view('listings.create');
+    }
+    //// Store Listing
+    public function store(Request $request){
+        $formFields = $request->validate([
+            'title' => 'required',
+            'company' => ['required', Rule::unique('listings', 'company')],
+            'location' => 'required',
+            'website' => 'required',
+            'email' => ['required', 'email', Rule::unique('listings', 'email')],
+            'tags' => 'required',
+            'description' => 'required'
+
+        ]);
+
+        Listing::create($formFields);
+
+        return redirect('/')->with('message', 'Listing Created Successfully');
     }
 }
