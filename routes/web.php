@@ -26,5 +26,11 @@ Route::get('/listings/create', [ListingController::class, 'create']);
 // Store Listing
 Route::post('/listings', [ListingController::class, 'store']);
 
+// Edit Listing
+Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
+
+// Update Edited Listing
+Route::patch('/listings/{listing}', [ListingController::class, 'update']);
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
