@@ -66,14 +66,14 @@ class ListingController extends Controller
     }
 
     //Show Edit form
-    public function edit(Listing $listing) {
+    public function edit(Listing $listing)
+    {
         return view('listings.edit', ['listing' => $listing]);
-
     }
 
     //Update Edited form
-    public function update(Request $request, Listing $listing) {
-
+    public function update(Request $request, Listing $listing)
+    {
         $formFields = $request->validate([
             'title' => 'required',
             'company' => ['required'],
@@ -91,8 +91,11 @@ class ListingController extends Controller
         $listing->update($formFields);
 
         return redirect('/')->with('message', 'Listing Updated Successfully');
-
     }
 
-
+    public function destroy(Listing $listing)
+    {
+        $listing->delete();
+        return redirect('/')->with('message', 'Listing Deleted Successfully');
+    }
 }

@@ -32,5 +32,8 @@ Route::get('/listings/{listing}/edit', [ListingController::class, 'edit']);
 // Update Edited Listing
 Route::patch('/listings/{listing}', [ListingController::class, 'update']);
 
+// Delete Listing
+Route::delete('/listings/{listing}', [ListingController::class, 'destroy']);
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
