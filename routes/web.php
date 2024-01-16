@@ -37,6 +37,9 @@ Route::patch('/listings/{listing}', [ListingController::class, 'update'])->middl
 // Delete Listing
 Route::delete('/listings/{listing}', [ListingController::class, 'destroy'])->middleware('auth');
 
+// Manage Listing
+Route::get('listings/manage', [ListingController::class, 'manage'])->middleware('auth');
+
 // Single Listing
 Route::get('/listings/{listing}', [ListingController::class, 'show']);
 
@@ -56,7 +59,9 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 //Show login form Users
 
-Route::get('/login', [UserController::class, 'login'])->name('login')->middleware('guest');
+Route::get('/login', [UserController::class, 'login'])
+    ->name('login')
+    ->middleware('guest');
 
 //Login User
 
